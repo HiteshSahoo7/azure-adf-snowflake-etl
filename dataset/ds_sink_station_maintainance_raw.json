@@ -1,0 +1,17 @@
+{
+	"name": "ds_sink_station_maintainance_raw",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_azure_sql_db_raw",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "STATIONS",
+			"table": "TB_STATION_MAINTAINANCE"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

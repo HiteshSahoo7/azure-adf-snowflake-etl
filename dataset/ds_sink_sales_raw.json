@@ -1,0 +1,17 @@
+{
+	"name": "ds_sink_sales_raw",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_azure_sql_db_raw",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SALES",
+			"table": "TB_SALES"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,15 @@
+{
+	"name": "adf-hitesh-labs",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e2f56a9f-8495-4fdd-991f-4bca9455ebff",
+		"tenantId": "fcff866a-e88c-4841-b639-9003e8f4c0e3"
+	}
+}
