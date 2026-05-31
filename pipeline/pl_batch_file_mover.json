@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SnowflakeV2Source",
+						"query": "SELECT *\nFROM CONFIGURATION.TB_BATCH_FILE_MOVER_CONFIG\nWHERE SF_EFFECTIVE_TO='2049-01-01'",
 						"exportSettings": {
 							"type": "SnowflakeExportCopyCommand"
 						},
@@ -25,7 +26,46 @@
 					"dataset": {
 						"referenceName": "ds_file_mover_config",
 						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Read Config table from SNF",
+						"dependencyConditions": [
+							"Succeeded"
+						]
 					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Read Config table from SNF').output.value",
+						"type": "Expression"
+					},
+					"isSequential": false,
+					"activities": [
+						{
+							"name": "Execute Pipeline1",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"policy": {
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "pl_copy_csv",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true
+							}
+						}
+					]
 				}
 			}
 		],
