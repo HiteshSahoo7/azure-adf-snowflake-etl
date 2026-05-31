@@ -1,0 +1,25 @@
+{
+	"name": "ls_snowflake_raw_dev",
+	"properties": {
+		"annotations": [],
+		"type": "SnowflakeV2",
+		"typeProperties": {
+			"authenticationType": "KeyPair",
+			"accountIdentifier": "JSUZVOC-PR12523",
+			"user": "SVC_ADF_USER",
+			"database": "RETAIL_ANALYTICS_RAW_DEV",
+			"warehouse": "COMPUTE_WH",
+			"role": "ADF_DEV_ROLE",
+			"host": "JSUZVOC-PR12523.snowflakecomputing.com",
+			"privateKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_az_key_vault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sec-snf-key-p8"
+			}
+		},
+		"version": "1.1"
+	}
+}
