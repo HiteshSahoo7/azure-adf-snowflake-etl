@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-hitesh-labs"
+		},
+		"ls_azure_adls_accountKey": {
+			"value": ""
+		},
+		"ls_azure_sql_db_raw_password": {
+			"value": ""
+		},
+		"ls_blob_storage_connectionString": {
+			"value": ""
+		},
+		"ls_stg_retails_analytics_connectionString": {
+			"value": ""
+		},
+		"ls_azure_adls_properties_typeProperties_url": {
+			"value": "https://stgretailanalyticsdev.dfs.core.windows.net/"
+		},
+		"ls_azure_sql_db_raw_properties_typeProperties_server": {
+			"value": "hitesh-sqlserver.database.windows.net"
+		},
+		"ls_azure_sql_db_raw_properties_typeProperties_database": {
+			"value": "db_hitesh_adf_raw"
+		},
+		"ls_azure_sql_db_raw_properties_typeProperties_userName": {
+			"value": "hiteshadmin"
+		},
+		"ls_az_key_vault_properties_typeProperties_baseUrl": {
+			"value": "https://kv-snf-adf.vault.azure.net/"
+		},
+		"ls_snowflake_raw_dev_properties_typeProperties_database": {
+			"value": "RETAIL_ANALYTICS_RAW_DEV"
+		},
+		"ls_snowflake_raw_dev_properties_typeProperties_role": {
+			"value": "ADF_DEV_ROLE"
+		},
+		"ls_snowflake_raw_dev_properties_typeProperties_host": {
+			"value": "JSUZVOC-PR12523.snowflakecomputing.com"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
