@@ -52,9 +52,18 @@
 						"referenceName": "ds_adls_csv_source",
 						"type": "DatasetReference",
 						"parameters": {
-							"container_name": "retails-analytics",
-							"folder_path": "Source/customers/",
-							"file_name": "customers.csv"
+							"container_name": {
+								"value": "@pipeline().parameters.p_source_container",
+								"type": "Expression"
+							},
+							"folder_path": {
+								"value": "@pipeline().parameters.p_source_folder",
+								"type": "Expression"
+							},
+							"file_name": {
+								"value": "@pipeline().parameters.p_file_name",
+								"type": "Expression"
+							}
 						}
 					}
 				],
@@ -63,14 +72,40 @@
 						"referenceName": "ds_adls_csv_sink",
 						"type": "DatasetReference",
 						"parameters": {
-							"container_name": "retails-analytics",
-							"folder_path": "customers/inprogress/",
-							"file_name": "customers_20260516.csv"
+							"container_name": {
+								"value": "@pipeline().parameters.p_sink_container",
+								"type": "Expression"
+							},
+							"folder_path": {
+								"value": "@pipeline().parameters.p_sink_folder",
+								"type": "Expression"
+							},
+							"file_name": {
+								"value": "@concat(pipeline().parameters.p_file_name,utcNow())",
+								"type": "Expression"
+							}
 						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"p_source_container": {
+				"type": "string"
+			},
+			"p_source_folder": {
+				"type": "string"
+			},
+			"p_file_name": {
+				"type": "string"
+			},
+			"p_sink_container": {
+				"type": "string"
+			},
+			"p_sink_folder": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "Common"
 		},
